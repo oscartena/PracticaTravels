@@ -6,6 +6,10 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import android.app.Activity;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.ImageSwitcher;
+import android.widget.ImageView;
+import android.widget.ViewSwitcher;
 
 import com.example.travels.databinding.ActivityMainBinding;
 
@@ -34,6 +38,15 @@ public class MainActivity extends AppCompatActivity {
 
         binding.recycler1.setLayoutManager(new LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL,false));
         binding.recycler1.setAdapter(new TravelAdapter(imagenes));
+
+        ImageSwitcher is = findViewById(R.id.imageSwitcher);
+        is.setFactory(new ViewSwitcher.ViewFactory() {
+            @Override
+            public View makeView() {
+                ImageView imageView = new ImageView(getApplicationContext());
+                return imageView;
+            }
+        });
 
     }
 }

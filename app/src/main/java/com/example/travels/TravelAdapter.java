@@ -3,6 +3,7 @@ package com.example.travels;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageSwitcher;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
@@ -25,7 +26,16 @@ public class TravelAdapter extends RecyclerView.Adapter<TravelViewHolder> {
 
     @Override
     public void onBindViewHolder(@NonNull TravelViewHolder holder, int position) {
-        holder.imageView.setImageResource(imagenes.get(position));
+        int idImagen = imagenes.get(position);
+        holder.imageView.setImageResource(idImagen);
+
+        holder.itemView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                ImageSwitcher imageSwitcher = view.getRootView().findViewById(R.id.imageSwitcher);
+                imageSwitcher.setImageResource(idImagen);
+            }
+        });
 
     }
 

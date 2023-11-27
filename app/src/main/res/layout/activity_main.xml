@@ -35,6 +35,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/toolbar"
+        android:background="#D5F1B5"
         >
 
         <androidx.recyclerview.widget.RecyclerView
@@ -46,9 +47,11 @@
             />
 
         <ImageSwitcher
+            android:id="@+id/imageSwitcher"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_weight="1" />
+            android:layout_weight="1"
+            android:layout_margin="15dp"/>
 
     </LinearLayout>
 
