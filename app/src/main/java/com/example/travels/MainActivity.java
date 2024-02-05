@@ -2,9 +2,7 @@ package com.example.travels;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
-import androidx.recyclerview.widget.RecyclerView;
 
-import android.app.Activity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageSwitcher;
@@ -15,6 +13,12 @@ import com.example.travels.databinding.ActivityMainBinding;
 
 import java.util.List;
 
+/**
+ * MainActivity de la aplicación Travels que muestra una lista de imágenes en un RecyclerView y al hacer clic en una de ellas se muestra en un ImageSwitcher.
+ * @see TravelAdapter Adaptador para el RecyclerView.
+ * @author Oscar Tena Marin
+ * @version 2024-02-05
+ */
 public class MainActivity extends AppCompatActivity {
     ActivityMainBinding binding;
     private List<Integer> imagenes = List.of(
@@ -30,6 +34,10 @@ public class MainActivity extends AppCompatActivity {
             R.drawable.image10
     );
 
+    /**
+     * Método que se ejecuta al crear la actividad.
+     * @param savedInstanceState Instancia guardada con el estado de la actividad.
+     */
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
